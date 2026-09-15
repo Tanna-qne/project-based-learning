@@ -1,8 +1,10 @@
 # DesignBuilder AI 教学插件
 
-状态：项目已初始化；尚未实现、编译或安装插件，也尚未启动外部 Agent。
+状态：已提交 0.1 插件骨架（中文窗口、只读 DB 状态摘要、Dify 聊天接口）；尚未在用户的 Windows + DB 7.3.1.003 环境编译和加载验证。
 
 目标版本：**DesignBuilder 7.3.1.003**（用户已确认）。
+
+快速开始：参见 [WINDOWS_SETUP.md](WINDOWS_SETUP.md)。代码位于 `src/DBAILearningAssistant/`。
 
 ## 产品目标
 
