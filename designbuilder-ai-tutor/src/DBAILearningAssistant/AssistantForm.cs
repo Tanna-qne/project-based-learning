@@ -43,7 +43,6 @@ namespace DBAILearningAssistant
             var bottom = new Panel { Dock = DockStyle.Bottom, Height = 94, Padding = new Padding(6) };
             askButton.Text = "提问"; askButton.Dock = DockStyle.Right; askButton.Width = 76;
             questionBox.Multiline = true; questionBox.Dock = DockStyle.Fill;
-            questionBox.PlaceholderText = "例如：我现在选中了什么？下一步应该检查哪些设置？";
             askButton.Click += async (s, e) => await AskAsync();
             bottom.Controls.Add(questionBox); bottom.Controls.Add(askButton);
 
