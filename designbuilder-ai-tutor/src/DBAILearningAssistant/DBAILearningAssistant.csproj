@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{2D072809-C19E-4AC7-9D28-A6D890C88B80}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>DBAILearningAssistant</RootNamespace>
+    <AssemblyName>DBAILearningAssistant</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget><DebugSymbols>true</DebugSymbols><DebugType>full</DebugType>
+    <Optimize>false</Optimize><OutputPath>bin\Debug\</OutputPath><DefineConstants>DEBUG;TRACE</DefineConstants><WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget><DebugType>pdbonly</DebugType><Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath><DefineConstants>TRACE</DefineConstants><WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DB.Api"><HintPath>$(MSBuildProgramFiles32)\DesignBuilder\Lib\DB.Api.dll</HintPath></Reference>
+    <Reference Include="DB.Extensibility.Contracts"><HintPath>$(MSBuildProgramFiles32)\DesignBuilder\Lib\DB.Extensibility.Contracts.dll</HintPath></Reference>
+    <Reference Include="System" /><Reference Include="System.ComponentModel.Composition" />
+    <Reference Include="System.Core" /><Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" /><Reference Include="System.Drawing" />
+    <Reference Include="System.Web.Extensions" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AssistantForm.cs" /><Compile Include="AppSettings.cs" />
+    <Compile Include="DifyClient.cs" /><Compile Include="LearningAssistantPlugin.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup><None Include="App.config" /></ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
