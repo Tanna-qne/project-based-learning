@@ -12,6 +12,7 @@ namespace DBAILearningAssistant
         private readonly TextBox chatBox = new TextBox();
         private readonly TextBox questionBox = new TextBox();
         private readonly Button askButton = new Button();
+        private readonly Timer contextTimer = new Timer { Interval = 1500 };
         private AppSettings settings;
         private DifyClient client;
 
@@ -47,6 +48,9 @@ namespace DBAILearningAssistant
             bottom.Controls.Add(questionBox); bottom.Controls.Add(askButton);
 
             Controls.Add(chatBox); Controls.Add(contextBox); Controls.Add(top); Controls.Add(bottom);
+            contextTimer.Tick += (s, e) => RefreshContext();
+            FormClosed += (s, e) => contextTimer.Stop();
+            contextTimer.Start();
             RefreshContext();
         }
 
